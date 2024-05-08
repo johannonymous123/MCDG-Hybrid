@@ -158,7 +158,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-function [sigma_s,sigma_a,q,Particles,x_left_bound,x_right_bound,y_left_bound,y_right_bound,t_f,N_Q]=Hohlraum_Init(delta_t)
+function [sigma_s,sigma_a,q,Particles,x_left_bound,x_right_bound,y_left_bound,y_right_bound,t_f]=Hohlraum_Init(delta_t)
 %Sets up material parameters for Hohlraum
 %N_Q = -1000;
 x_left_bound = 0;
@@ -225,7 +225,7 @@ switch mode
         res = 448;
         new_part = @(a,b) [a,Lattice_source(N_Q_source,delta_t,n_x,n_y),b];
     case 'hohlraum'
-        [sigma_s,sigma_a,q,Particles,x_left_bound,x_right_bound,y_left_bound,y_right_bound,t_f,~] ...
+        [sigma_s,sigma_a,q,Particles,x_left_bound,x_right_bound,y_left_bound,y_right_bound,t_f] ...
                             = Hohlraum_Init(delta_t);
         res = 416;
         %new_part = @(a,b) [a,Hohlraum_source(N_Q_prev,delta_t,delta_x,delta_y,1),b];
@@ -350,13 +350,13 @@ run_time = toc;
 %Set up plots
 %[Phi,Px,Py] = create_plot(degree_x,degree_y,Coef_new,w,delta_x,delta_y);
 Phi = make_phi(Coef_new,w,n_x,delta_x,delta_y,false);
-%Phi=Phi+kron(phi_u,ones(res/n_x));
+Phi=Phi+kron(phi_u,ones(n_x/n_x));
 if plot_bool
     figure
     %surf(Px,Py,Phi)
     if strcmp(mode,'line')
         surf(Phi)
-        colobar
+        colorbar
         caxis([0,0.5])
     else
         surf(log10(max(Phi,1e-15)))

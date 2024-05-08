@@ -288,7 +288,7 @@ if plot_bool
     %surf(Px,Py,Phi)
     if strcmp(mode,'line')
         surf(Phi)
-        colobar
+        colorbar
         caxis([0,0.5])
     else
         surf(log10(max(Phi,1e-15)))
