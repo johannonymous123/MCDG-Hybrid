@@ -1,4 +1,3 @@
-Here's the proofread version:
 
 This repository contains Matlab code used for the numerical experiments described in https://arxiv.org/abs/2312.04217. We provide code to perform Hybrid runs as well as monolithic SN-runs.
 
