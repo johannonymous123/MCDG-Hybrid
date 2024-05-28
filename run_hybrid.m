@@ -88,7 +88,6 @@ for i = 1:size(pars,2)
    
     disp(strcat(['Hybrid:',mode,'   ',num2str(i),' of ',num2str(N_jobs),'    done!']))
 end
-delete(gcp('nocreate'));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
