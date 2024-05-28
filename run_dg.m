@@ -300,7 +300,7 @@ if plot_bool
     end
     xlabel('x')
     ylabel('y')
-    title('hybrid')
+    title('DG')
     shading interp
 end
 end
