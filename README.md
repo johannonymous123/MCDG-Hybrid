@@ -9,4 +9,6 @@ Alternatively, user-specified parameters can be entered in the files input_dg.m 
 
 The files run_hybrid.m and run_dg.m contain the actual body of code that will produce solutions, while the files hohlraum.txt and lattice.txt contain the reference solutions mentioned in the paper.
 
-Note that these implementations are far from runtime optimized and can take a substantial amount of time to execute. We recommend experimenting with relatively small values of the parameters at first and continuously increasing their value to get a feel for the expected time spent before moving on to more serious runs.
+The directory 'paper_runs' contains branching directories leading to various input files reproducing the runs in the paper.
+
+Note that these implementations are far from runtime optimized and can take a substantial amount of time to execute. We recommend experimenting with relatively small values of the parameters at first and continuously increasing their value to get a feel for the expected time spent before moving on to more serious runs. This is particularly true for the input files in 'paper_runs' as these start multiple long runs in sequence, which can take hours.
