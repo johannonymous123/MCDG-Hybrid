@@ -53,7 +53,7 @@ disp(strcat(['DG:',mode,'   ',num2str(i),' of ',num2str(N_jobs),'.    started at
     end
   
      disp(strcat(['DG:',mode,'   ',num2str(i),' of ',num2str(N_jobs),'    done!']))   
-
+end
 switch mode
         case 'line'
             Phi_analytical = analytical_solution(n_x);
@@ -93,11 +93,8 @@ switch mode
             shading interp
             end
 end
-if N_jobs>1
-    disp('Paused before next example: press any button in console to continue')
-pause
-end
-end
+
+
 
 
 
@@ -301,6 +298,8 @@ if plot_bool
     xlabel('x')
     ylabel('y')
     title('DG')
+    subtitle(strcat('Problem:',mode,'; n_cells=',num2str(n_x),'; N=',num2str(n_mu)))
+
     shading interp
 end
 end

@@ -40,7 +40,8 @@ for i = 1:size(pars,2)
 
     [Phi_hybrid_mc,np,nnp,run_time,iterations] = hybrid_mc_solution(dt,N_Q,w_min,n_x,n_mu);
    
-    
+  disp(strcat(['Hybrid:',mode,'   ',num2str(i),' of ',num2str(N_jobs),'    done!']))
+end    
 
     switch mode
         case 'line'
@@ -86,8 +87,7 @@ for i = 1:size(pars,2)
     
    
    
-    disp(strcat(['Hybrid:',mode,'   ',num2str(i),' of ',num2str(N_jobs),'    done!']))
-end
+  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -369,6 +369,7 @@ if plot_bool
     xlabel('x')
     ylabel('y')
     title('hybrid')
+    subtitle(strcat('Problem:',mode,'; n-cells=',num2str(n_x),'; N=',num2str(n_mu),'; N_Q=',num2str(N_Q)))
     shading interp
 end
 n_p = n_p/time_steps;
